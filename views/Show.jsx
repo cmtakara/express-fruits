@@ -1,17 +1,20 @@
 const React = require("react");
+const DefaultLayout = require("./layout/Default")
 
 class Show extends React.Component {
   render() {
-    const {name, color, readyToEat} = this.props.fruit
+    const { name, color, readyToEat } = this.props.fruit
     return (
-      <div>
-        <h1>Show Page</h1>
+      <DefaultLayout title={`${name} show page`}>
+        <nav>
+          <a href="/fruits">Home Page</a>
+        </nav>
 
         <div>
           <p>The {name} is {color}.</p>
-          {readyToEat? "It is ready to eat!" : "It is not ready to eat... dont touch that"}
-        </div> 
-      </div>
+          {readyToEat ? "It is ready to eat!" : "It is not ready to eat... dont touch that"}
+        </div>
+      </DefaultLayout>
     )
   }
 }
